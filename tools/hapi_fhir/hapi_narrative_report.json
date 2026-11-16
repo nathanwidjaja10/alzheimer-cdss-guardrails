@@ -1,0 +1,19 @@
+{
+  "server": {
+    "name": "HAPI FHIR Server",
+    "version": "7.4.0"
+  },
+  "fhirVersion": "4.0.1",
+  "skipped_no_narrative": 263,
+  "per_combo": {
+    "biomistral/b": "201/201",
+    "biomistral/c": "232/232",
+    "llama31_8b/c": "232/232",
+    "mistral7b/c": "232/232",
+    "qwen25_14b/c": "232/232"
+  },
+  "n": 1129,
+  "n_pass": 1129,
+  "resources_created": 6774,
+  "failures": []
+}

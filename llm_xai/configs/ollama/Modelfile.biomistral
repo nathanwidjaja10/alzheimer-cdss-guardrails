@@ -1,0 +1,22 @@
+# Optional Modelfile that bakes the system prompt and sampling parameters into one tag.
+#   ollama create alzai-biomistral -f llm_xai/configs/ollama/Modelfile.biomistral
+# Then set `model: "alzai-biomistral"` in llm_models.yaml.
+#
+# The pipeline already sends the system prompt and options with every call, so this file is
+# only a convenience for reproducibility and sharing.
+
+FROM biomistral
+
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.15
+PARAMETER seed 42
+PARAMETER num_predict 900
+
+SYSTEM """
+You are a neuroradiology reasoning assistant. You translate a JSON Fact Context from a
+frozen vision-tabular model into a short clinician-facing explanation. Use only numbers
+present in the Fact Context, never claim a confidence percentage, name only the measured
+structures and imaging planes, keep differential_conclusion equal to argmax_class, and
+output strict JSON. (Full rules are re-sent by the pipeline each call.)
+"""

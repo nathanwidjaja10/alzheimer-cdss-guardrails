@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Audit Manusia-Buta — Narasi LLM</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="topbar-row">
+    <strong>Audit Manusia-Buta</strong>
+    <span class="muted">llama31_8b · varian C</span>
+    <label>Auditor:
+      <input id="auditorInput" type="text" placeholder="nama/inisial">
+    </label>
+    <button id="startBtn">Mulai / Lanjutkan</button>
+    <span class="spacer"></span>
+    <label>Lompat ke sesi:
+      <input id="jumpInput" type="text" placeholder="session_id">
+    </label>
+    <button id="jumpBtn">Buka</button>
+  </div>
+  <div class="topbar-row">
+    <div id="progressBar"><div id="progressFill"></div></div>
+    <span id="progressText" class="muted">belum mulai</span>
+  </div>
+</header>
+
+<main id="app" hidden>
+  <div class="meta-row">
+    <span id="sessionLabel" class="muted"></span>
+    <span id="revisitNote" class="warn" hidden></span>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="swatch sw-num"></span> Angka muncul di narasi &amp; Fact Context (kandidat pasangan, klik utk cari)</span>
+    <span class="legend-item"><span class="swatch sw-anat"></span> Istilah anatomi muncul di narasi &amp; Fact Context (kandidat pasangan, klik utk cari)</span>
+    <span class="legend-item"><span class="swatch sw-pulse"></span> Ditemukan &amp; disorot sesaat setelah diklik</span>
+    <span class="legend-item muted">Highlight = bantuan visual, <strong>bukan verdict</strong> benar/salah — tidak lengkap, tetap baca teks penuh.</span>
+  </div>
+
+  <div class="columns columns-3">
+    <section id="factsPanel" class="panel col">
+      <h2>Fact Context (input model)</h2>
+      <div id="factsBody"></div>
+    </section>
+
+    <section id="narrativePanel" class="panel col">
+      <h2>Narasi LLM</h2>
+      <div id="rankingCheat" class="cheat-view"></div>
+      <div id="narrativeBody"></div>
+    </section>
+
+    <section id="formPanel" class="panel col">
+      <h2>Penilaian Anda</h2>
+      <form id="auditForm">
+        <fieldset>
+          <legend>Ada halusinasi (klaim tak berdasar Fact Context) di narasi ini?</legend>
+          <label><input type="radio" name="has_hallucination" value="no" checked> Tidak</label>
+          <label><input type="radio" name="has_hallucination" value="yes"> Ya</label>
+        </fieldset>
+
+        <fieldset id="categoryFieldset" hidden>
+          <legend>Kategori (boleh lebih dari satu)</legend>
+          <div id="categoryChecks"></div>
+          <label class="block">Catatan kategori "lainnya" / span teks yang salah:
+            <input type="text" id="otherCategoryNote" placeholder="kutip bagian narasi yang bermasalah">
+          </label>
+        </fieldset>
+
+        <details id="fieldGroundingDetails">
+          <summary>Grounding per-field (opsional)</summary>
+          <div id="fieldGroundingBody"></div>
+        </details>
+
+        <fieldset>
+          <legend>Keyakinan Anda</legend>
+          <select id="confidenceSelect">
+            <option value="low">Rendah</option>
+            <option value="medium" selected>Sedang</option>
+            <option value="high">Tinggi</option>
+          </select>
+        </fieldset>
+
+        <label class="block">Catatan bebas (opsional):
+          <textarea id="notesInput" rows="3"></textarea>
+        </label>
+
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+
+      <div id="revealPanel" hidden>
+        <h3>Verdict guardrail otomatis (baru terlihat setelah submit)</h3>
+        <div id="revealBody"></div>
+        <button id="nextBtn">Lanjut ke kasus berikutnya</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>

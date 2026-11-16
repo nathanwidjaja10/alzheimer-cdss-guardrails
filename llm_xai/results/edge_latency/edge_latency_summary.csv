@@ -1,0 +1,5 @@
+model,n,wall_s_median,wall_s_q1,wall_s_q3,wall_s_median_ci95_lo,wall_s_median_ci95_hi,wall_s_mean,wall_s_median_single_call_only,ms_per_token_median,regenerated_pct,fallback_pct,cold_start_rows
+llama31_8b,30,38.83,36.9,41.66,37.31,40.34,38.89,38.76,107.14,3.33,0.0,0
+mistral7b,30,41.25,39.33,42.85,40.15,42.44,42.49,41.1,110.06,3.33,0.0,0
+biomistral,30,59.14,41.64,63.55,52.77,62.14,57.56,33.03,86.04,73.33,60.0,0
+qwen25_14b,30,57.34,56.09,57.95,56.83,57.71,57.45,57.34,163.98,0.0,0.0,0

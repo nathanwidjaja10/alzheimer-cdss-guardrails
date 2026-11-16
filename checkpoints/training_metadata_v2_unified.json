@@ -1,0 +1,132 @@
+{
+  "model_name": "apple/mobilevit-small",
+  "architecture": "MobileViT25DMultimodalV2 (10-slice multi-plane + 8-D covariate fusion)",
+  "num_classes": 3,
+  "class_names": [
+    "CN",
+    "MCI",
+    "AD"
+  ],
+  "label_map": {
+    "CN": 0,
+    "MCI": 1,
+    "AD": 2
+  },
+  "img_size": 224,
+  "cohort_protocol": {
+    "policy": "internal_oasis_external_adni_v1",
+    "internal_cohorts": [
+      "OASIS"
+    ],
+    "external_cohorts": [
+      "ADNI"
+    ],
+    "cohorts_in_catalog": [
+      "ADNI",
+      "OASIS"
+    ],
+    "split_manifest": "checkpoints/split_manifest.json",
+    "catalog_sha256": "bb9dd14c406619003cca808bd92cbb45e9a22a5292a51e694afd09e574b024eb"
+  },
+  "stage1_config": {
+    "num_epochs": 50,
+    "min_epochs": 12,
+    "patience": 10,
+    "batch_size": 8,
+    "learning_rate": 3e-05,
+    "label_smoothing": 0.1,
+    "selection_criterion": "EMA(alpha=0.5) of validation session macro F1"
+  },
+  "stage2_config": {
+    "num_epochs": 50,
+    "min_epochs": 30,
+    "patience": 15,
+    "batch_size_effective": 16,
+    "learning_rate_backbone": 2e-06,
+    "learning_rate_head": 3e-05,
+    "label_smoothing": 0.15,
+    "focal_gamma": 1.5,
+    "sampler_weight_exponent": 1.0,
+    "train_class_prior": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ]
+  },
+  "multi_plane_config": {
+    "n_axial": 5,
+    "n_coronal": 3,
+    "n_sagittal": 2,
+    "total_slices": 10,
+    "axial_pct": [
+      0.35,
+      0.65
+    ],
+    "coronal_pct": [
+      0.35,
+      0.65
+    ],
+    "sagittal_pct": [
+      0.4,
+      0.6
+    ]
+  },
+  "tabular_features": {
+    "feature_names": [
+      "gender",
+      "has_gender",
+      "age_norm",
+      "has_age",
+      "mmse_norm",
+      "has_mmse",
+      "apoe4",
+      "has_apoe"
+    ],
+    "tabular_dim": 8,
+    "mask_prob": 0.2,
+    "note": "MMSE and APOE4 each carry a paired availability flag and are masked independently; gender/age are mandatory intake fields and are never masked."
+  },
+  "decision_rules": {
+    "primary": "argmax",
+    "logit_adjustment_prior": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "calibrated_ad_threshold": 0.24999999999999994,
+    "calibrated_mci_threshold": 0.3299999999999999,
+    "threshold_constraints": {
+      "ad_recall_min": 80.0,
+      "cn_specificity_min": 85.0,
+      "ad_precision_min": 45.0
+    },
+    "note": "Thresholds are fit on the internal validation fold only; the external (ADNI) fold is scored, never calibrated on."
+  },
+  "evaluation": {
+    "internal_test_sessions": 232,
+    "internal_test_cohort_composition": {
+      "OASIS": 232
+    },
+    "internal_test_macro_f1_argmax": 75.20484109631397,
+    "internal_test_macro_f1_argmax_full_multimodal": 72.85621306732139,
+    "cohort_probe_auc": 1.0
+  },
+  "external_evaluation": {
+    "external_sessions": 463,
+    "external_cohort_composition": {
+      "ADNI": 463
+    },
+    "external_macro_f1_argmax": 40.59161070945771,
+    "external_macro_f1_argmax_full_multimodal": 44.67609631173768,
+    "external_macro_f1_calibrated": 46.20284594687325
+  },
+  "primary_decision_path": {
+    "mode": "image_only_argmax",
+    "description": "The reported main model masks every covariate (scenario B) and takes the argmax. Full-covariate and threshold-calibrated results are kept only as comparisons; Cell 14 shows the covariates do not help on this test set and that APOE4 slightly hurts.",
+    "calibration_temperature": 0.4919613301753998,
+    "out_of_domain_sq_mahalanobis_threshold": 997.455496250703,
+    "validated_domain": "OASIS-3 structural MRI processed with FreeSurfer. Scans from other sites or pipelines (for example ADNI processed with FastSurfer) are outside the validated range and should be flagged by the out-of-domain check."
+  },
+  "stage_comparison_note": "On the internal test fold the Stage 2 minus Stage 1 macro F1 difference sits inside its 95% bootstrap interval (Cell 17.2), so it is reported as not separable from noise, not as an improvement.",
+  "device": "mps"
+}

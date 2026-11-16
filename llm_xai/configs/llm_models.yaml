@@ -1,0 +1,63 @@
+# Model roster of the LLM-XAI layer. Every model runs locally through Ollama; cloud entries are
+# disabled by default. Requires `ollama serve` and the model already pulled (`ollama pull`).
+#
+# The four evaluation models need about 22 GB of disk. Use
+#   evaluate_llm_paper.py --one-model-at-a-time
+# (pull, sweep all sessions, `ollama rm`, next model), or set
+#   OLLAMA_MODELS=/path/to/external-disk/ollama-models
+
+models:
+  # --- local models (Ollama) ---
+  # llama31_8b is the CDSS default (pipeline.py, api_router.py); the others are evaluation comparisons.
+  biomistral:   # 7B biomedical model (Mistral-7B continued-pretrained on PubMed Central)
+    kind: ollama
+    # BioMistral-7B Q4 from the Ollama registry mirror (`ollama pull cniongolo/biomistral`).
+    # The official GGUF is `hf.co/BioMistral/BioMistral-7B-GGUF:Q4_K_M`.
+    model: "cniongolo/biomistral:latest"
+    temperature: 0.1
+    top_p: 0.9
+    seed: 42
+    num_predict: 600   # a valid output is about five short sentences
+  mistral7b:    # control with the same base architecture as BioMistral (isolates the effect of biomedical pretraining)
+    kind: ollama
+    model: "mistral:7b-instruct"
+    temperature: 0.1
+    top_p: 0.9
+    seed: 42
+    num_predict: 600   # a valid output is about five short sentences
+  llama31_8b:   # general-purpose model of comparable size (CDSS default)
+    kind: ollama
+    model: "llama3.1:8b-instruct-q4_K_M"
+    temperature: 0.1
+    top_p: 0.9
+    seed: 42
+    num_predict: 600   # a valid output is about five short sentences
+  qwen25_14b:   # largest model that fits in 16 GB RAM
+    kind: ollama
+    model: "qwen2.5:14b-instruct-q4_K_M"
+    temperature: 0.1
+    top_p: 0.9
+    seed: 42
+    num_predict: 600   # a valid output is about five short sentences
+
+  # --- smoke tests only (not reported) ---
+  phi3_mini:
+    kind: ollama
+    model: "phi3:mini"
+    temperature: 0.1
+    top_p: 0.9
+    seed: 42
+    num_predict: 600   # a valid output is about five short sentences
+
+  # --- cloud models: disabled; usable only with --allow-cloud and llm_xai/configs/ethics_clearance.json
+  #     (ethics approval number and date) ---
+  gpt4o_mini:
+    kind: openai
+    model: "gpt-4o-mini"
+    temperature: 0.1
+    requires: cloud_ethics_clearance
+  gemini_flash:
+    kind: google
+    model: "gemini-2.5-flash"
+    temperature: 0.1
+    requires: cloud_ethics_clearance

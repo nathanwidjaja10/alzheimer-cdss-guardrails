@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Deterministic guardrails for LLM narratives in a FHIR-based Alzheimer's neuroimaging CDSS (code)"
+abstract: >-
+  Code for a deterministic closed-loop guardrail that keeps LLM-written narratives and question answering
+  factual over the frozen explainable-AI output of a 2.5D MobileViT Alzheimer's classifier, a translator of the
+  audited narrative into HL7 FHIR R4, and a clinical decision support system (CDSS) interface. Research
+  prototype, not a medical device. Synthetic demonstration data only.
+authors:
+  - family-names: Widjaja
+    given-names: Jonathan Albertus
+  - family-names: Hareva
+    given-names: David Habsara
+repository-code: "https://github.com/nathanwidjaja10/alzheimer-cdss-guardrails"
+license: PolyForm-Noncommercial-1.0.0
+keywords:
+  - deterministic guardrails
+  - large language models
+  - HL7 FHIR
+  - neuroimaging
+  - clinical decision support
+  - Alzheimer's disease

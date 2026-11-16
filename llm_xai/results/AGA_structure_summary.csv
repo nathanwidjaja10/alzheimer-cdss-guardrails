@@ -1,0 +1,4 @@
+argmax_class,n,hippocampus_energy_pct_mean,hippocampus_energy_pct_median,hippocampus_concentration_ratio_mean,ventricles_energy_pct_mean,ventricles_energy_pct_median,ventricles_concentration_ratio_mean,amygdala_energy_pct_mean,amygdala_energy_pct_median,amygdala_concentration_ratio_mean,aga_hit_rate_pct,aga_hit_wilson_lo_pct,aga_hit_wilson_hi_pct,aga_hit_k,aga_hit_n
+AD,15,0.664,0.658,0.851,6.307,5.734,1.463,0.117,0.084,0.397,100.0,79.61,100.0,15,15
+CN,168,0.68,0.645,0.679,2.445,2.39,0.985,0.172,0.115,0.428,,,,0,0
+MCI,49,0.476,0.327,0.511,2.612,1.791,0.659,0.248,0.11,0.599,97.96,89.31,99.64,48,49

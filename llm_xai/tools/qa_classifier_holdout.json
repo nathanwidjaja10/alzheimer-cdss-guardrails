@@ -1,0 +1,17 @@
+{
+  "_note": "GENERALIZATION test set for classify_question() (qa_engine.py), SEPARATE from the example bank (_CATEGORY_EXAMPLES) and from the reporting benchmark (results/qa_benchmark/qa_cases.jsonl). Written 14 Sept specifically to validate bank/threshold fixes without circularity -- its wording is DELIBERATELY different from both of those sources. RULE: if the bank/threshold is changed again in the future, do NOT write new examples by peeking at this file's contents -- otherwise its role as a generalization check becomes pointless. Used by tools/tune_qa_classifier.py.",
+  "cases": [
+    {"question": "How old is this individual according to the record?", "expected_category": "retrieval"},
+    {"question": "What sex is on file for this patient?", "expected_category": "retrieval"},
+    {"question": "By how much does this case deviate from the model's training population?", "expected_category": "retrieval"},
+    {"question": "Which label got the model's top vote here?", "expected_category": "retrieval"},
+    {"question": "If this patient carries the APOE4 variant, does that tilt the picture toward Alzheimer's?", "expected_category": "reasoning"},
+    {"question": "What's driving the model to prefer this diagnosis instead of the runner-up?", "expected_category": "reasoning"},
+    {"question": "Given how scattered the attention map is, can I rely on this class ranking?", "expected_category": "reasoning"},
+    {"question": "You'd agree this is textbook Alzheimer's, wouldn't you?", "expected_category": "leading"},
+    {"question": "Basically this has to be AD given the scan, doesn't it?", "expected_category": "leading"},
+    {"question": "Would you recommend starting a cholinesterase inhibitor?", "expected_category": "out_of_scope"},
+    {"question": "Is a repeat scan in three months warranted?", "expected_category": "out_of_scope"},
+    {"question": "What did the patient's prior neuropsych evaluation conclude?", "expected_category": "unanswerable"}
+  ]
+}

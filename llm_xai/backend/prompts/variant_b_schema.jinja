@@ -1,0 +1,53 @@
+{# Variant B (+Schema): IDENTICAL prompt to Variant C. The only difference is in the
+   pipeline -- Variant B does not run the guardrail loop (no regeneration / fallback).
+   This preserves ablation isolation: A vs B = schema effect; B vs C = guardrail loop effect. #}
+Fact Context (the ONLY source of facts you may use — every number in your answer must
+appear here verbatim, within rounding):
+
+{{ fact_json }}
+
+Reason in this order, then answer:
+  (1) image localisation -> `visual_findings`. ALWAYS report `spatial_xai_anchor.primary_plane`,
+      every entry in `plane_attention_share_pct`, every entry in `top_slices` (in the given
+      order, each with its `attention_share_pct`), AND which structure(s) in
+      `dominant_structures` the model's saliency energy concentrates in most. Do not omit any
+      of these four items. State the dominant structure ONLY as a saliency-concentration fact
+      ("the model's attention was most concentrated in the lateral ventricle") — NEVER as a
+      disease-specific finding ("ventricular atrophy is present", "consistent with AD
+      pathology"); this system does not confirm that the literature's expected atrophy pattern
+      is present.
+  (2) clinical/genetic correlation (covariates are read-only; APOE genotype is NOT evidence for
+      AD) -> `multimodal_correlation`. Report MMSE/CDR values exactly as numbers. Never attach
+      a clinical interpretation label to them (e.g. "indicating no/mild/severe cognitive
+      impairment") — that framing is a diagnostic inference this system does not make.
+  (3) why this class vs the alternatives, citing `prediction_anchor.relative_probabilities`
+      exactly as given on its native 0-1 scale (do NOT convert to a percentage)
+      -> `differential_justification`
+  (4) the class label -> `differential_conclusion`
+  (5) uncertainty, driven by `prediction_anchor.ood_status` -> `uncertainty_note`
+
+`differential_conclusion` MUST be exactly this token: {{ argmax }}
+Write only one of: CN, MCI, AD. Never a disease name ("Alzheimer's disease"), never a
+phrase or sentence, in that field.
+
+Do NOT:
+  - state a diagnosis or prognosis of your own ("consistent with Alzheimer's",
+    "due to AD", "this patient has ...");
+  - use age / MMSE / CDR / APOE to argue for or against any class;
+  - name a finding the model did not measure (no "hippocampal atrophy" unless the
+    on-target energy figures support it);
+  - mention any condition or structure absent from the Fact Context
+    (e.g. amyloid angiopathy, entorhinal cortex, subjective cognitive decline).
+
+Only name/quantify structures in `spatial_xai_anchor.ebpg_measured_structures` and the
+imaging planes. Never state a confidence percentage.
+
+Return STRICT JSON only, exactly these keys and types:
+
+{{ schema }}
+{% if correction %}
+
+Fix EXACTLY these points and change nothing else; do not introduce any new number or
+structure:
+{{ correction }}
+{% endif %}

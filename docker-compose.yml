@@ -1,0 +1,104 @@
+# AlzheimerAI -- RUNTIME stack: CDSS (backend + frontend), optional Ollama, FHIR test server.
+# Training is NOT containerised (original runs used Apple MPS on the host; use .venv + requirements-lock.txt).
+#
+#   docker compose up --build                 # backend :8000 + frontend :5173
+#   docker compose --profile fhir up -d hapi  # local HAPI FHIR (paper interop test)
+#
+# The repo is bind-mounted at /app, so checkpoints/ and dummy_data/ are used exactly as on the host.
+# This repository ships only the synthetic demo sessions in dummy_data/ (no OASIS-3 or ADNI data).
+# To analyse OASIS-3 or ADNI sessions, obtain them under their own data-use agreements and place the
+# derived data in oasis_data/ or adni_data/ (same layout as dummy_data/, see dummy_data/README.md).
+#
+# LLM (Ollama): run it on the HOST (`ollama serve`, `ollama pull llama3.1:8b-instruct-q4_K_M`).
+# On macOS a container cannot use Metal/MPS, so Ollama-in-Docker would be CPU-only and very slow.
+# Linux (+NVIDIA) users can instead use the `ollama` profile and set OLLAMA_HOST=http://ollama:11434.
+
+x-python: &python
+  build:
+    context: .
+    args:
+      TORCH_INDEX: ${TORCH_INDEX:-https://download.pytorch.org/whl/cpu}
+  image: alzheimerai-runtime:local
+  working_dir: /app
+  volumes:
+    - .:/app
+    - hf-cache:/hf-cache
+  environment:
+    HF_HOME: /hf-cache            # sentence-transformers (NLI + embedding) models download here
+    OLLAMA_HOST: ${OLLAMA_HOST:-http://host.docker.internal:11434}
+  extra_hosts:
+    - "host.docker.internal:host-gateway"   # Linux needs this; Docker Desktop already provides it
+
+services:
+  backend:
+    <<: *python
+    # No --reload (app.py's __main__ uses it); inference_engine loads the model at import.
+    command: uvicorn app:app --app-dir backend --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"          # frontend hardcodes http://localhost:8000
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/api/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+  frontend:
+    image: node:22-slim
+    working_dir: /app/alzheimer-xai-cdss
+    # Runs vite directly, NOT `npm run dev`: its `predev` hook regenerates the tracked
+    # src/data.json from whatever data is mounted and would overwrite it if data is absent.
+    # `npm install --no-package-lock`, not `npm ci`: package-lock.json was generated on macOS and lacks
+    # Linux optional deps, so `npm ci` fails in the container; this also leaves the host lock untouched.
+    command: sh -c "npm install --no-package-lock --no-audit --no-fund && npx vite --host 0.0.0.0 --port 5173"
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app                                   # vite serves dummy_data from the repo root
+      - frontend-node-modules:/app/alzheimer-xai-cdss/node_modules   # keep Linux binaries off the host
+    depends_on:
+      - backend
+
+  # Local HAPI FHIR JPA (R4) for tools/hapi_fhir/hapi_roundtrip_test.py. Loopback only, in-memory H2:
+  # nothing persists and no data leaves the machine.
+  hapi:
+    profiles: ["fhir"]
+    image: hapiproject/hapi:v7.4.0
+    container_name: hapi-fhir-local
+    ports:
+      - "127.0.0.1:${HAPI_PORT:-8080}:8080"
+    environment:
+      hapi.fhir.fhir_version: R4
+      hapi.fhir.allow_external_references: "false"
+      hapi.fhir.validation.requests_enabled: "true"
+      hapi.fhir.bulk_export_enabled: "false"
+      spring.datasource.url: "jdbc:h2:mem:test_mem"
+      spring.datasource.driverClassName: org.h2.Driver
+      spring.jpa.properties.hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirH2Dialect
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/fhir/metadata > /dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 40s
+
+  # Optional containerised Ollama (Linux). Models persist in the ollama-models volume.
+  #   docker compose --profile ollama up -d ollama
+  #   docker compose exec ollama ollama pull llama3.1:8b-instruct-q4_K_M
+  ollama:
+    profiles: ["ollama"]
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    # NVIDIA GPU: uncomment (needs nvidia-container-toolkit)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices: [{driver: nvidia, count: all, capabilities: [gpu]}]
+
+volumes:
+  hf-cache:
+  ollama-models:
+  frontend-node-modules:

@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+
+# Regenerated or downloaded at run time
+llm_xai/results/narratives/
+checkpoints/xai_cache/
+dummy_data/raw_brainweb/
+dummy_data/_work/
+tools/FastSurfer/

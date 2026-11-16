@@ -1,0 +1,5 @@
+model,variant,n,HR_pct,HR_wilson_lo_pct,HR_wilson_hi_pct,NCR_mean,NCR_pooled,NCR_pooled_n_claims,NCR_wilson_lo,NCR_wilson_hi,Faithfulness_NLI_mean,Faithfulness_n,Faithfulness_pass_pct,Faithfulness_wilson_lo_pct,Faithfulness_wilson_hi_pct,parse_error_pct,fallback_pct,regenerated_pct,wall_s_median,ms_per_token_median
+biomistral,c,232,0.0,0.0,1.63,1.0,1.0,1892,0.998,1.0,0.4175,3479,38.69,37.08,40.32,0.0,58.62,67.67,4.57,6.18
+llama31_8b,c,232,0.0,0.0,1.63,1.0,1.0,2751,0.9986,1.0,0.553,3479,56.8,55.15,58.44,0.0,0.43,1.72,2.37,6.53
+mistral7b,c,232,0.0,0.0,1.63,1.0,1.0,2044,0.9981,1.0,0.5499,3479,53.61,51.95,55.26,0.0,3.45,4.74,2.47,6.1
+qwen25_14b,c,232,0.0,0.0,1.63,1.0,1.0,2379,0.9984,1.0,0.6314,3479,61.54,59.91,63.14,0.0,0.0,13.36,3.94,11.37

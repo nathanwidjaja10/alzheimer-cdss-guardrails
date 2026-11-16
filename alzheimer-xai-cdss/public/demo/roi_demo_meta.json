@@ -1,0 +1,54 @@
+{
+  "label_map": {
+    "1": "Hippocampus",
+    "2": "Amygdala",
+    "3": "Lateral ventricle",
+    "4": "Temporal horn",
+    "5": "Third ventricle"
+  },
+  "volumes_source": "OASIS-3 samples (CN and AD), not measured on the dummy images",
+  "cn": {
+    "session": "BWP01_MR_d0000",
+    "cdr": 0,
+    "mmse": 30,
+    "age": 68,
+    "diagnosis": "Cognitively normal",
+    "synthetic": true,
+    "volumes_ml": {
+      "1": 7.64,
+      "2": 2.85,
+      "3": 26.0,
+      "4": 1.24,
+      "5": 1.15
+    },
+    "image_measured_ml": {
+      "1": 12.01,
+      "2": 4.52,
+      "3": 16.96,
+      "4": 1.25,
+      "5": 1.13
+    }
+  },
+  "ad": {
+    "session": "BWP04_MR_d0728",
+    "cdr": 2,
+    "mmse": 14,
+    "age": 81,
+    "diagnosis": "AD Dementia",
+    "synthetic": true,
+    "volumes_ml": {
+      "1": 2.73,
+      "2": 1.53,
+      "3": 73.75,
+      "4": 6.84,
+      "5": 1.86
+    },
+    "image_measured_ml": {
+      "1": 14.62,
+      "2": 4.97,
+      "3": 20.81,
+      "4": 1.5,
+      "5": 1.44
+    }
+  }
+}

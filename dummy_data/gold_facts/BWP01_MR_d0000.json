@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.2.0",
+  "session_id": "BWP01_MR_d0000",
+  "prediction_anchor": {
+    "argmax_class": "CN",
+    "probability_semantics": "relative_ranking_only",
+    "relative_probabilities": {
+      "CN": 0.8338,
+      "MCI": 0.0804,
+      "AD": 0.0858
+    },
+    "calibration_note": "Temperature scaling did not generalise (T~0); the probability figures are a RELATIVE RANKING CN<MCI<AD, not absolute confidence percentages.",
+    "decision_rule": "argmax (vision-only; covariates masked)",
+    "ood_status": "in_validated_domain",
+    "sq_mahalanobis_distance": 543.1,
+    "ood_threshold": 997.5,
+    "validated_domain_note": "OASIS-3 structural MRI processed with FreeSurfer. Scans from other sites or pipelines (for example ADNI processed with FastSurfer) are outside the validated range and should be flagged by the out-of-domain check."
+  },
+  "spatial_xai_anchor": {
+    "xai_method": "hirescam",
+    "primary_plane": "Coronal",
+    "plane_attention_share_pct": {
+      "Coronal": 79.6,
+      "Axial": 16.1,
+      "Sagittal": 4.3
+    },
+    "top_slices": [
+      {
+        "name": "Coronal 2",
+        "index": 1,
+        "attention_share_pct": 29.5,
+        "on_target_pct": 0.49
+      },
+      {
+        "name": "Coronal 3",
+        "index": 2,
+        "attention_share_pct": 16.4,
+        "on_target_pct": 0.21
+      },
+      {
+        "name": "Coronal 1",
+        "index": 0,
+        "attention_share_pct": 15.2,
+        "on_target_pct": 0.0
+      }
+    ],
+    "ebpg_measured_structures": [
+      "hippocampus",
+      "lateral ventricle",
+      "inferior lateral ventricle",
+      "third ventricle",
+      "amygdala",
+      "cerebral cortex"
+    ],
+    "on_target_energy_pct": 0.75,
+    "baseline_uniform_pct": 3.37,
+    "ebpg_concentration_ratio": 0.22,
+    "dominant_structures": [
+      "hippocampus",
+      "lateral ventricle"
+    ],
+    "aseg_available": true,
+    "structure_saliency_caveat": "Saliency concentration does not by itself confirm the disease-specific atrophy pattern reported in the literature; ventricular dominance and non-monotonic staging across CN/MCI/AD have been observed independently of diagnostic accuracy."
+  },
+  "clinical_covariates": {
+    "used_in_primary_decision": false,
+    "age": 68.0,
+    "gender": "Female",
+    "mmse_score": 30.0,
+    "mmse_available": true,
+    "cdr_score": 0.0,
+    "apoe_genotype": "E3/E3",
+    "apoe_available": true,
+    "covariate_caveat": "Covariates are read-only (used_in_primary_decision=false). APOE genotype is encoded as a single e4-presence flag, without accounting for the protective e2 allele, and must never be presented as evidence for or against Alzheimer's disease \u2014 regardless of which alleles are present."
+  },
+  "model_provenance": {
+    "name": "MobileViT25DMultimodalV2-Unified",
+    "checkpoint_loaded": true,
+    "internal_test_macro_f1": 0.752,
+    "external_adni1_macro_f1": 0.4059
+  },
+  "fact_digest": "sha256:2f687ee9fa725883367c6cb8a0ef54fa84b2a2f5fac860c88553aa23c5119239"
+}

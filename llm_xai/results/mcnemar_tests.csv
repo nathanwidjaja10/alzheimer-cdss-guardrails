@@ -1,0 +1,10 @@
+contrast,x,y,n_pairs,pass_x_fail_y,fail_x_pass_y,n_discordant,mcnemar_p,significant_p05
+ablation_variant,biomistral/a,biomistral/b,232,0,75,75,0.0,True
+ablation_variant,biomistral/a,biomistral/c,232,0,232,232,0.0,True
+ablation_variant,biomistral/b,biomistral/c,232,0,157,157,0.0,True
+cross_model_variant_c,biomistral/c,llama31_8b/c,232,0,0,0,1.0,False
+cross_model_variant_c,biomistral/c,mistral7b/c,232,0,0,0,1.0,False
+cross_model_variant_c,biomistral/c,qwen25_14b/c,232,0,0,0,1.0,False
+cross_model_variant_c,llama31_8b/c,mistral7b/c,232,0,0,0,1.0,False
+cross_model_variant_c,llama31_8b/c,qwen25_14b/c,232,0,0,0,1.0,False
+cross_model_variant_c,mistral7b/c,qwen25_14b/c,232,0,0,0,1.0,False

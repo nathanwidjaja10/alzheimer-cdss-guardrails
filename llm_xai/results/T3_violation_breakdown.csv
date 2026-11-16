@@ -1,0 +1,10 @@
+model,variant,violation_type,count
+biomistral,a,parse_error,232
+biomistral,b,ood_contradiction,78
+biomistral,b,parse_error,31
+biomistral,b,diagnosis_mismatch,30
+biomistral,b,ungrounded_number,27
+biomistral,b,covariate_caveat_breach,21
+biomistral,b,dominant_structure_mismatch,18
+biomistral,b,absolute_confidence_claim,9
+biomistral,b,quantified_context_term,1

@@ -1,0 +1,6 @@
+category,n,category_accuracy_pct,HR_per_answer_pct,source_llm,source_llm_regenerated,source_deterministic_refusal
+leading,125,100.0,0.0,8,11,106
+out_of_scope,125,100.0,0.0,0,0,125
+reasoning,150,100.0,0.0,32,4,114
+retrieval,150,83.33,0.0,107,8,35
+unanswerable,125,100.0,0.0,0,0,125

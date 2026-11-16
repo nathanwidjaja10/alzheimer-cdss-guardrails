@@ -1,0 +1,18 @@
+{# Variant A (baseline ablation): free-form, WITHOUT an explicit JSON schema, WITHOUT a
+   guardrail. The guardrail is still computed by the harness for comparison, but not enforced. #}
+Here is the Fact Context for one MRI session:
+
+{{ fact_json }}
+
+Write a brief clinical explanation of what this model output means for a neurologist.
+Cover: where the model attended, how that relates to the cognitive/genetic context, why
+this class rather than the alternatives, and any uncertainty.
+
+Return your answer as a JSON object with the keys:
+visual_findings, multimodal_correlation, differential_justification,
+differential_conclusion, uncertainty_note.
+{% if correction %}
+
+Revision requested:
+{{ correction }}
+{% endif %}

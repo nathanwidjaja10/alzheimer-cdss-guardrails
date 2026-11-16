@@ -1,0 +1,330 @@
+[
+  {
+    "id": "BWP01",
+    "cohort": "Synthetic",
+    "age": "68",
+    "gender": "Female",
+    "apoe": "33",
+    "education": "16",
+    "sessions": [
+      {
+        "id": "d0000",
+        "sessionId": "BWP01_MR_d0000",
+        "days": 0,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 0",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP01_MR_d0000/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP01_MR_d0000/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0000/slice_004.png"
+        ],
+        "diagnosis": "Cognitively normal",
+        "cdr": "0",
+        "mmse": "30"
+      },
+      {
+        "id": "d0364",
+        "sessionId": "BWP01_MR_d0364",
+        "days": 364,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 364",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP01_MR_d0364/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP01_MR_d0364/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0364/slice_004.png"
+        ],
+        "diagnosis": "Cognitively normal",
+        "cdr": "0",
+        "mmse": "29"
+      },
+      {
+        "id": "d0735",
+        "sessionId": "BWP01_MR_d0735",
+        "days": 735,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 735",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP01_MR_d0735/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP01_MR_d0735/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP01_MR_d0735/slice_004.png"
+        ],
+        "diagnosis": "Cognitively normal",
+        "cdr": "0",
+        "mmse": "30"
+      }
+    ]
+  },
+  {
+    "id": "BWP02",
+    "cohort": "Synthetic",
+    "age": "71",
+    "gender": "Male",
+    "apoe": "34",
+    "education": "14",
+    "sessions": [
+      {
+        "id": "d0000",
+        "sessionId": "BWP02_MR_d0000",
+        "days": 0,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 0",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP02_MR_d0000/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP02_MR_d0000/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0000/slice_004.png"
+        ],
+        "diagnosis": "Cognitively normal",
+        "cdr": "0",
+        "mmse": "29"
+      },
+      {
+        "id": "d0371",
+        "sessionId": "BWP02_MR_d0371",
+        "days": 371,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 371",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP02_MR_d0371/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP02_MR_d0371/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0371/slice_004.png"
+        ],
+        "diagnosis": "uncertain dementia",
+        "cdr": "0.5",
+        "mmse": "27"
+      },
+      {
+        "id": "d0742",
+        "sessionId": "BWP02_MR_d0742",
+        "days": 742,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 742",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP02_MR_d0742/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP02_MR_d0742/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP02_MR_d0742/slice_004.png"
+        ],
+        "diagnosis": "uncertain dementia",
+        "cdr": "0.5",
+        "mmse": "25"
+      }
+    ]
+  },
+  {
+    "id": "BWP03",
+    "cohort": "Synthetic",
+    "age": "74",
+    "gender": "Female",
+    "apoe": "34",
+    "education": "12",
+    "sessions": [
+      {
+        "id": "d0000",
+        "sessionId": "BWP03_MR_d0000",
+        "days": 0,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 0",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP03_MR_d0000/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP03_MR_d0000/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0000/slice_004.png"
+        ],
+        "diagnosis": "uncertain dementia",
+        "cdr": "0.5",
+        "mmse": "26"
+      },
+      {
+        "id": "d0378",
+        "sessionId": "BWP03_MR_d0378",
+        "days": 378,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 378",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP03_MR_d0378/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP03_MR_d0378/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0378/slice_004.png"
+        ],
+        "diagnosis": "AD Dementia",
+        "cdr": "1",
+        "mmse": "23"
+      },
+      {
+        "id": "d0749",
+        "sessionId": "BWP03_MR_d0749",
+        "days": 749,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 749",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP03_MR_d0749/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP03_MR_d0749/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP03_MR_d0749/slice_004.png"
+        ],
+        "diagnosis": "AD Dementia",
+        "cdr": "1",
+        "mmse": "19"
+      }
+    ]
+  },
+  {
+    "id": "BWP04",
+    "cohort": "Synthetic",
+    "age": "79",
+    "gender": "Male",
+    "apoe": "44",
+    "education": "10",
+    "sessions": [
+      {
+        "id": "d0000",
+        "sessionId": "BWP04_MR_d0000",
+        "days": 0,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 0",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP04_MR_d0000/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP04_MR_d0000/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0000/slice_004.png"
+        ],
+        "diagnosis": "AD Dementia",
+        "cdr": "1",
+        "mmse": "21"
+      },
+      {
+        "id": "d0357",
+        "sessionId": "BWP04_MR_d0357",
+        "days": 357,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 357",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP04_MR_d0357/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP04_MR_d0357/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0357/slice_004.png"
+        ],
+        "diagnosis": "AD Dementia",
+        "cdr": "1",
+        "mmse": "18"
+      },
+      {
+        "id": "d0728",
+        "sessionId": "BWP04_MR_d0728",
+        "days": 728,
+        "type": "Synthetic BrainWeb phantom, FastSurfer volume (.mgz)",
+        "date": "Day 728",
+        "url": "/@fs/repo/dummy_data/freesurfer_data/BWP04_MR_d0728/brain.mgz",
+        "maskUrl": "/@fs/repo/dummy_data/freesurfer_data/BWP04_MR_d0728/aseg.mgz",
+        "sliceUrls": [
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/coronal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/sagittal_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/slice_000.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/coronal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/sagittal_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/slice_001.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/coronal_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/slice_002.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/slice_003.png",
+          "/@fs/repo/dummy_data/slice_cache/BWP04_MR_d0728/slice_004.png"
+        ],
+        "diagnosis": "AD Dementia",
+        "cdr": "2",
+        "mmse": "14"
+      }
+    ]
+  }
+]

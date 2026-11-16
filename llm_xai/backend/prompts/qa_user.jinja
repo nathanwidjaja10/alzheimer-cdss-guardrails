@@ -1,0 +1,33 @@
+{# Single-turn Q&A prompt (plan §3.5/§5J). `evidence_json` = the Fact JSON subset
+   selected by retrieve_fields() for THIS question only -- not the whole Fact Context --
+   so run_qa_dag stays tractable (fewer numbers/terms that can be wrong) and so this
+   differs from external-corpus RAG (plan §3.4): retrieval here is purely over this
+   session's own fact structure. `prediction_anchor.argmax_class` is ALWAYS included by
+   retrieve_fields() regardless of category, because HARD RULE 4 (immutable diagnosis)
+   applies on every turn. #}
+Evidence you may use (the ONLY source of facts for this answer):
+
+{{ evidence_json }}
+
+Base narrative for this session (already verified, context only -- do not repeat it
+verbatim, use it only to understand what has already been said):
+{{ base_narrative_relevant }}
+
+Doctor's question:
+{{ question }}
+
+Answer ONLY the question above, using ONLY facts from Evidence. List every Evidence key
+you relied on in `cited_fields` (use the exact keys shown in Evidence). Answer in 1-3
+sentences. If Evidence does not contain the answer, or the question asks for a
+recommendation/prognosis/treatment/follow-up-test/hypothetical, set `answerable` to
+false and put exactly `<REFUSE>` in `answer`.
+
+Return STRICT JSON only, exactly these keys and types:
+
+{{ schema }}
+{% if correction %}
+
+A deterministic auditor rejected the previous attempt. Fix EXACTLY these points and
+change nothing else; do not introduce any new number, structure, or diagnosis:
+{{ correction }}
+{% endif %}

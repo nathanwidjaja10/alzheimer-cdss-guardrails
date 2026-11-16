@@ -1,0 +1,13 @@
+session_id,subject_id,patient_label,brainweb_subject,days_from_entry,age_at_scan,gender,education,apoe,mmse,cdr,diagnosis,synthetic
+BWP01_MR_d0000,BWP01,stable normal,04,0,68,Female,16,33,30,0,Cognitively normal,1
+BWP01_MR_d0364,BWP01,stable normal,05,364,69,Female,16,33,29,0,Cognitively normal,1
+BWP01_MR_d0735,BWP01,stable normal,06,735,70,Female,16,33,30,0,Cognitively normal,1
+BWP02_MR_d0000,BWP02,normal to mild decline,18,0,71,Male,14,34,29,0,Cognitively normal,1
+BWP02_MR_d0371,BWP02,normal to mild decline,20,371,72,Male,14,34,27,0.5,uncertain dementia,1
+BWP02_MR_d0742,BWP02,normal to mild decline,38,742,73,Male,14,34,25,0.5,uncertain dementia,1
+BWP03_MR_d0000,BWP03,mild decline to dementia,41,0,74,Female,12,34,26,0.5,uncertain dementia,1
+BWP03_MR_d0378,BWP03,mild decline to dementia,42,378,75,Female,12,34,23,1,AD Dementia,1
+BWP03_MR_d0749,BWP03,mild decline to dementia,43,749,76,Female,12,34,19,1,AD Dementia,1
+BWP04_MR_d0000,BWP04,progressing dementia,44,0,79,Male,10,44,21,1,AD Dementia,1
+BWP04_MR_d0357,BWP04,progressing dementia,45,357,80,Male,10,44,18,1,AD Dementia,1
+BWP04_MR_d0728,BWP04,progressing dementia,46,728,81,Male,10,44,14,2,AD Dementia,1

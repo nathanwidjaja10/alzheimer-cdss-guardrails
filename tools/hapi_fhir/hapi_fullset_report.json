@@ -1,0 +1,14 @@
+{
+  "server": {
+    "name": "HAPI FHIR Server",
+    "version": "7.4.0"
+  },
+  "fhirVersion": "4.0.1",
+  "n": 232,
+  "n_pass": 232,
+  "n_inprocess_valid": 232,
+  "n_server_validate_0err": 232,
+  "n_tx_201x6": 232,
+  "n_readback_ok": 232,
+  "failures": []
+}

@@ -1,0 +1,2 @@
+n,category_accuracy_pct,category_accuracy_wilson_lo_pct,category_accuracy_wilson_hi_pct,HR_per_answer_pct,HR_wilson_lo_pct,HR_wilson_hi_pct,grounding_fail_pct,contradiction_fail_pct,refusal_precision,refusal_recall,refusal_tp,refusal_fp,refusal_fn,regenerated_pct,wall_s_median
+675,96.3,94.59,97.48,0.0,0.0,0.57,0.0,0.0,0.495,1.0,250,255,0,36.0,0.98

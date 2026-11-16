@@ -1,0 +1,104 @@
+{
+  "base": "http://127.0.0.1:8090/fhir",
+  "cases": {
+    "CN": {
+      "inprocess_valid": true,
+      "server_validate": {
+        "status": 200,
+        "errors": [],
+        "warnings": 24
+      },
+      "transaction": {
+        "status": 200,
+        "n_entries": 6,
+        "all_201": true
+      },
+      "readback": {
+        "Patient/1": 200,
+        "Device/2": 200,
+        "ImagingStudy/3": 200,
+        "Observation/4": 200,
+        "DocumentReference/5": 200,
+        "DiagnosticReport/6": 200
+      },
+      "diagnosticreport_result_refs": [
+        "Observation/4"
+      ],
+      "refs_resolved": true,
+      "pass": true
+    },
+    "MCI": {
+      "inprocess_valid": true,
+      "server_validate": {
+        "status": 200,
+        "errors": [],
+        "warnings": 24
+      },
+      "transaction": {
+        "status": 200,
+        "n_entries": 6,
+        "all_201": true
+      },
+      "readback": {
+        "Patient/7": 200,
+        "Device/8": 200,
+        "ImagingStudy/9": 200,
+        "Observation/10": 200,
+        "DocumentReference/11": 200,
+        "DiagnosticReport/12": 200
+      },
+      "diagnosticreport_result_refs": [
+        "Observation/10"
+      ],
+      "refs_resolved": true,
+      "pass": true
+    },
+    "AD": {
+      "inprocess_valid": true,
+      "server_validate": {
+        "status": 200,
+        "errors": [],
+        "warnings": 24
+      },
+      "transaction": {
+        "status": 200,
+        "n_entries": 6,
+        "all_201": true
+      },
+      "readback": {
+        "Patient/13": 200,
+        "Device/14": 200,
+        "ImagingStudy/15": 200,
+        "Observation/16": 200,
+        "DocumentReference/17": 200,
+        "DiagnosticReport/18": 200
+      },
+      "diagnosticreport_result_refs": [
+        "Observation/16"
+      ],
+      "refs_resolved": true,
+      "pass": true
+    }
+  },
+  "negative": {
+    "malformed_rejected": {
+      "status": 422,
+      "pass": true
+    },
+    "atomic_rollback": {
+      "status": 422,
+      "patients_before": 3,
+      "patients_after": 3,
+      "pass": true
+    }
+  },
+  "server": {
+    "status": 200,
+    "software": {
+      "name": "HAPI FHIR Server",
+      "version": "7.4.0"
+    },
+    "fhirVersion": "4.0.1"
+  },
+  "overall_pass": true
+}

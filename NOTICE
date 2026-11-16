@@ -1,0 +1,93 @@
+NOTICE
+
+Copyright 2026 Jonathan Albertus Widjaja and David Habsara Hareva.
+The code and the trained model weights in this repository are licensed under the PolyForm Noncommercial
+License 1.0.0 (see LICENSE). That license covers only the authors' own work. The third-party material listed
+below is not the authors' work and is not licensed by the file LICENSE.
+
+Permission requests, including commercial licensing: nathanwidjaja10.nw@gmail.com
+
+
+1. OASIS-3 acknowledgment
+
+The trained checkpoint (checkpoints/best_model_v2_unified.pt) and the numbers derived from its evaluation
+benefited from OASIS-3 data. This repository contains no OASIS-3 images, covariates, or session identifiers of
+OASIS-3 participants beyond format examples in code comments and unit-test fixtures. OASIS-3 is not
+redistributed here; obtain it from https://www.oasis-brains.org/ under its data use agreement.
+
+Data were provided in part by OASIS-3: Longitudinal Multimodal Neuroimaging: Principal Investigators:
+T. Benzinger, D. Marcus, J. Morris; NIH P30 AG066444, P50 AG00561, P30 NS09857781, P01 AG026276,
+P01 AG003991, R01 AG043434, UL1 TR000448, R01 EB009352. AV-45 doses were provided by Avid Radiopharmaceuticals,
+a wholly owned subsidiary of Eli Lilly.
+
+P.J. LaMontagne, T.L.S. Benzinger, J.C. Morris, S. Keefe, R. Hornbeck, C. Xiong, E. Grant, J. Hassenstab,
+K. Moulder, A.G. Vlassenko, M.E. Raichle, C. Cruchaga, D. Marcus, "OASIS-3: Longitudinal Neuroimaging, Clinical,
+and Cognitive Dataset for Normal Aging and Alzheimer Disease," medRxiv, 2019,
+doi:10.1101/2019.12.13.19014902.
+
+
+2. BrainWeb simulated brain images (not the authors' work)
+
+The synthetic demonstration sessions in dummy_data/ (the conformed volumes brain.mgz and the segmentations
+aseg.mgz, the PNG slices in slice_cache/) and the demonstration volumes in alzheimer-xai-cdss/public/demo/ are
+derived from the BrainWeb: Simulated Brain Database (McConnell Brain Imaging Centre, Montreal Neurological
+Institute, McGill University, https://brainweb.bic.mni.mcgill.ca/), 20 normal anatomical models, simulated T1.
+
+- These images are not the work of the authors of this repository, and the authors do not claim them as their
+  own. The authors only processed them (skull stripping and segmentation with FastSurfer, slicing, conforming).
+- The license of this repository (PolyForm Noncommercial 1.0.0) does not cover them. The BrainWeb site states no
+  license or redistribution terms and asks only that its references be cited in any published work that uses
+  the data.
+- The original BrainWeb files are not included; tools/make_brainweb_demo.py downloads them from BrainWeb.
+- The authors will remove these derived files on request of the rights holders.
+
+Please cite, as requested by BrainWeb:
+
+- C.A. Cocosco, V. Kollokian, R.K.-S. Kwan, A.C. Evans, "BrainWeb: Online Interface to a 3D MRI Simulated Brain
+  Database," NeuroImage 5(4), S425, 1997.
+- R.K.-S. Kwan, A.C. Evans, G.B. Pike, "An extensible MRI simulator for post-processing evaluation," in
+  Visualization in Biomedical Computing (VBC'96), Lecture Notes in Computer Science 1131, Springer, 1996,
+  pp. 135-140, doi:10.1007/BFb0046947.
+- R.K.-S. Kwan, A.C. Evans, G.B. Pike, "MRI simulation-based evaluation of image-processing and classification
+  methods," IEEE Transactions on Medical Imaging 18(11), 1085-1097, 1999, doi:10.1109/42.816072.
+- D.L. Collins, A.P. Zijdenbos, V. Kollokian, J.G. Sled, N.J. Kabani, C.J. Holmes, A.C. Evans, "Design and
+  construction of a realistic digital brain phantom," IEEE Transactions on Medical Imaging 17(3), 463-468,
+  1998, doi:10.1109/42.712135.
+- B. Aubert-Broche, M. Griffin, G.B. Pike, A.C. Evans, D.L. Collins, "Twenty new digital brain phantoms for
+  creation of validation image data bases," IEEE Transactions on Medical Imaging 25(11), 1410-1416, 2006,
+  doi:10.1109/TMI.2006.883453.
+- B. Aubert-Broche, A.C. Evans, L. Collins, "A new improved version of the realistic digital brain phantom,"
+  NeuroImage 32(1), 138-145, 2006, doi:10.1016/j.neuroimage.2006.03.052.
+
+
+3. FastSurfer
+
+The brain masks and segmentations of the synthetic sessions were computed with FastSurfer
+(https://github.com/Deep-MI/FastSurfer, Apache-2.0), which is not included in this repository
+(tools/FastSurfer/ is cloned separately).
+
+L. Henschel, S. Conjeti, S. Estrada, K. Diers, B. Fischl, M. Reuter, "FastSurfer - A fast and accurate deep
+learning based neuroimaging pipeline," NeuroImage 219, 117012, 2020, doi:10.1016/j.neuroimage.2020.117012.
+
+
+4. MobileViT initial weights
+
+The classifier is a MobileViT backbone initialised from the pretrained model apple/mobilevit-small
+(https://huggingface.co/apple/mobilevit-small), which the code downloads at run time, and then fine-tuned by the
+authors. That model is released under the Apple sample code license
+(https://github.com/apple/ml-cvnets/blob/main/LICENSE), copyright (C) 2023 Apple Inc. The checkpoint in this
+repository is a modified binary form of it. Neither the name nor the trademarks of Apple Inc. are used to
+endorse this work.
+
+S. Mehta, M. Rastegari, "MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer,"
+ICLR 2022, arXiv:2110.02178.
+
+
+5. Other software
+
+Python and JavaScript dependencies (PyTorch, Hugging Face Transformers, FastAPI, fhir.resources, React, Vite,
+NiiVue, and others) are installed from their own package indexes under their own licenses and are not
+redistributed here. The large language models used through Ollama (Llama 3.1, Mistral, BioMistral, Qwen2.5) are
+not included and keep their own licenses; check each model's license before any use beyond research.
+
+This repository is a research prototype, not a medical device. Nothing in it is validated for clinical use.
